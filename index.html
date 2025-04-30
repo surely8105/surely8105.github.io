@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScubaWithMark.com - Coming Soon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 800px;
+            padding: 2rem;
+        }
+        
+        .logo {
+            margin-bottom: 2rem;
+        }
+        
+        .logo-text {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #a0e4ff;
+        }
+        
+        .coming-soon {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+        
+        .description {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .contact {
+            margin-top: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .email {
+            color: #a0e4ff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .email:hover {
+            color: #fff;
+        }
+        
+        .bubbles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .bubble {
+            position: absolute;
+            bottom: -100px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: rise 15s infinite ease-in;
+        }
+        
+        .bubble:nth-child(1) {
+            width: 40px;
+            height: 40px;
+            left: 10%;
+            animation-duration: 8s;
+        }
+        
+        .bubble:nth-child(2) {
+            width: 20px;
+            height: 20px;
+            left: 20%;
+            animation-duration: 5s;
+            animation-delay: 1s;
+        }
+        
+        .bubble:nth-child(3) {
+            width: 50px;
+            height: 50px;
+            left: 35%;
+            animation-duration: 10s;
+            animation-delay: 2s;
+        }
+        
+        .bubble:nth-child(4) {
+            width: 80px;
+            height: 80px;
+            left: 50%;
+            animation-duration: 7s;
+        }
+        
+        .bubble:nth-child(5) {
+            width: 35px;
+            height: 35px;
+            left: 55%;
+            animation-duration: 6s;
+            animation-delay: 1s;
+        }
+        
+        .bubble:nth-child(6) {
+            width: 45px;
+            height: 45px;
+            left: 65%;
+            animation-duration: 8s;
+            animation-delay: 3s;
+        }
+        
+        .bubble:nth-child(7) {
+            width: 90px;
+            height: 90px;
+            left: 70%;
+            animation-duration: 12s;
+        }
+        
+        .bubble:nth-child(8) {
+            width: 25px;
+            height: 25px;
+            left: 80%;
+            animation-duration: 6s;
+            animation-delay: 2s;
+        }
+        
+        @keyframes rise {
+            0% {
+                bottom: -100px;
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(100px);
+            }
+            100% {
+                bottom: 1080px;
+                transform: translateX(-200px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .logo-text {
+                font-size: 2.5rem;
+            }
+            
+            .tagline {
+                font-size: 1.25rem;
+            }
+            
+            .coming-soon {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+    
+    <div class="container">
+        <div class="logo">
+            <div class="logo-text">ScubaWithMark.com</div>
+        </div>
+        
+        <div class="tagline">Explore the Depths with an Experienced Guide</div>
+        
+        <h1 class="coming-soon">Coming Soon</h1>
+        
+        <p class="description">
+            We're preparing an immersive underwater experience. Soon you'll be able to book scuba adventures, access diving resources, and join our community of ocean enthusiasts.
+        </p>
+        
+        <p class="description">
+            Whether you're a beginner looking to get certified or an experienced diver seeking new destinations, ScubaWithMark will be your trusted companion for all things scuba.
+        </p>
+        
+        <div class="contact">
+            For inquiries, contact: <a href="mailto:info@scubawithmark.com" class="email">info@scubawithmark.com</a>
+        </div>
+    </div>
+    
+    <script>
+        // Add subtle parallax effect to bubbles
+        document.addEventListener('mousemove', (e) => {
+            const bubbles = document.querySelectorAll('.bubble');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            bubbles.forEach(bubble => {
+                const speed = 20;
+                const bubbleX = (x - 0.5) * speed;
+                const bubbleY = (y - 0.5) * speed;
+                
+                bubble.style.transform = `translate(${bubbleX}px, ${bubbleY}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
